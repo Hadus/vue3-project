@@ -6,6 +6,8 @@ import 'element-plus/dist/index.css';
 
 import App from './App.vue';
 import router from './router';
+// 打印环境信息
+console.log(import.meta.env)
 
 import { usePermissStore } from './store/permiss';
 

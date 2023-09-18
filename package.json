@@ -3,9 +3,11 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"start": "vite",
-		"build": "vite build && node toFile.mjs",
-		"serve": "vite preview"
+		"start": "vite --mode dev",
+		"prod": "vite --mode prod",
+		"build:dev": "vite build && node toFile.mjs --mode dev",
+		"build": "vite build && node toFile.mjs --mode prod",
+		"preview": "vite preview --mode prod"
 	},
 	"dependencies": {
 		"@element-plus/icons-vue": "^2.0.9",
