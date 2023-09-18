@@ -52,7 +52,7 @@ export default defineConfig({
 	},
 	server: {
 		host: '0.0.0.0', // 配置host 才可以外网访问
-		port: 80, // 访问80端口不需要加端口号
+		port: 8080, // 访问80端口不需要加端口号
 		open: true,
 		proxy:{ // 代理
 
@@ -69,8 +69,8 @@ export default defineConfig({
     emptyOutDir: false, // 将此配置项设为false即可
     rollupOptions: {
       plugins: [
-        copyPlugin({
-          targets: [{ src: './src/mock/current/img/*', dest: 'dist/src/mock/current/img' }],
+        copyPlugin({ // 打包自动复制文件
+          // targets: [{ src: './src/mock/current/img/*', dest: 'dist/src/mock/current/img' }],
         }),
       ],
     },

@@ -1,10 +1,13 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
+// element plus
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
+import 'element-plus/dist/index.css';
+
 import App from './App.vue';
 import router from './router';
+
 import { usePermissStore } from './store/permiss';
-import 'element-plus/dist/index.css';
 
 import * as dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn' // 导入本地化语言
