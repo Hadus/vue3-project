@@ -7,8 +7,10 @@ import 'element-plus/dist/index.css';
 import '@a/css/index.less'
 import App from './App.vue';
 import router from './router';
-// svg
-import '@a/svg';
+// svgIcon component
+import 'virtual:svg-icons-register';
+import svgIcon from '@c/SvgIcon';
+
 
 import { usePermissStore } from './store/permiss';
 const app = createApp(App);
@@ -18,6 +20,9 @@ app.use(router);
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component);
 }
+// 注册 svg
+app.component('svg-icon', svgIcon);
+
 // 自定义权限指令
 const permiss = usePermissStore();
 app.directive('permiss', {

@@ -6,6 +6,7 @@ import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import path from 'path';
 const resolve = (dir) => path.resolve(__dirname, dir);
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import legacy from '@vitejs/plugin-legacy'; // 处理打包module问题，可以file协议可以打开
 import copyPlugin from 'rollup-plugin-copy'; // 打包中文件复制
 import basicSsl from '@vitejs/plugin-basic-ssl'; // 自动生成https
@@ -42,6 +43,13 @@ export default defineConfig(({ command, mode }) => {
 			Components({
 				resolvers: [ElementPlusResolver()]
 			}),
+			createSvgIconsPlugin({
+        // 指定需要缓存的图标文件夹
+        iconDirs: [path.resolve(process.cwd(), 'src/assets/svg')],
+        // 指定 symbolId 格式
+				// 使用 name="[dir]-[name]"
+        symbolId: 'icon-[dir]-[name]',
+      }),
 			// basicSsl(), // https
 			legacy({ targets: ['defaults', 'not IE 11'] })
 		],
