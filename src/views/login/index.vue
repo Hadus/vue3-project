@@ -83,7 +83,7 @@
 	</div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" name="login">
 import { ref, reactive } from 'vue';
 import { usePermissStore } from '../store/permiss';
 import { useRouter } from 'vue-router';

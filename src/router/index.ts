@@ -15,7 +15,7 @@ const indexRoutes = {
         title: 'home',
         permiss: '1',
       },
-      component: () => import(/* webpackChunkName: "import" */ '@v/home/'),
+      component: () => import(/* webpackChunkName: "home" */ '@v/home/'),
     },
   ],
 };
@@ -38,10 +38,14 @@ const indexRoutes = {
 // });
 
 const routes: RouteRecordRaw[] = [
+  {
+    path: '/',
+    redirect: '/home',
+  },
   indexRoutes,
   {
     path: '/login',
-    name: 'Login',
+    name: 'login',
     meta: {
       title: '登录',
     },
