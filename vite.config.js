@@ -20,7 +20,7 @@ export default defineConfig(({ command, mode }) => {
 				"@": resolve("./src"),
 				"@v": resolve("./src/views"),
 				"@c": resolve("./src/components"),
-				"~": resolve("./assets"),
+				"@a": resolve("./src/assets"),
 			},
 			extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json', '.vue']
 		},

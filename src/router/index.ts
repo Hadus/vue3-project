@@ -1,12 +1,12 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import { usePermissStore } from '../store/permiss';
-import Index from '../views/Index.vue';
+import index from '@v/index.vue';
 
 // 主路由
 const indexRoutes = {
   path: '/',
-  name: 'Index',
-  component: Index,
+  name: 'index',
+  component: index,
   children: [
     {
       path: '/home',

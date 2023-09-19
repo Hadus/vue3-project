@@ -1,8 +1,8 @@
 <template>
 	<v-header />
-	<v-sidebar />
-	<div class="content-box">
-		<div class="content" :class="sidebar.hasSub ? 'has-sub' : ''">
+	<div class="main-bot">
+		<v-sidebar />
+		<div class="main-content" :class="sidebar.hasSub ? 'has-sub' : ''">
 			<router-view v-slot="{ Component }">
 				<transition name="move" mode="out-in">
 					<keep-alive>
@@ -20,3 +20,16 @@ import vSidebar from '@c/sidebar/';
 
 const sidebar = useSidebarStore();
 </script>
+<style lang="less" scoped>
+.main-bot {
+	flex: 1;
+	display: flex;
+	height: 100%;
+}
+
+.main-content {
+	flex: 1;
+	height: 100%;
+	background-color: peru;
+}
+</style>
