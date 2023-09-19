@@ -5,12 +5,10 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import path from 'path';
-const resolve = (dir) => path.resolve(__dirname, dir);
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import legacy from '@vitejs/plugin-legacy'; // 处理打包module问题，可以file协议可以打开
-import copyPlugin from 'rollup-plugin-copy'; // 打包中文件复制
 import basicSsl from '@vitejs/plugin-basic-ssl'; // 自动生成https
-
+const resolve = (dir) => path.resolve(__dirname, dir);
 // 打印环境变量
 export default defineConfig(({ command, mode }) => {
 	return {
@@ -48,7 +46,7 @@ export default defineConfig(({ command, mode }) => {
         iconDirs: [path.resolve(process.cwd(), 'src/assets/svg')],
         // 指定 symbolId 格式
 				// 使用 name="[dir]-[name]"
-        symbolId: 'icon-[dir]-[name]',
+        symbolId: 'iconsvg-[dir]-[name]',
       }),
 			// basicSsl(), // https
 			legacy({ targets: ['defaults', 'not IE 11'] })
@@ -71,11 +69,7 @@ export default defineConfig(({ command, mode }) => {
 			},
 			emptyOutDir: false, // 将此配置项设为false即可
 			rollupOptions: {
-				plugins: [
-					copyPlugin({ // 打包自动复制文件
-						// targets: [{ src: './src/mock/current/img/*', dest: 'dist/src/mock/current/img' }],
-					}),
-				],
+				plugins: [],
 			},
 			outDir: 'dist',
 			assetsDir: 'assets',

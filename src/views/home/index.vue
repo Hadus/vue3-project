@@ -1,8 +1,6 @@
 <template>
   <div class="main-content scoll">
     home
-    <div>
-    </div>
   </div>
 </template>
 

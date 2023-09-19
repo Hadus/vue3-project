@@ -27,12 +27,12 @@ const props = defineProps({
 
 // icon classname
 const svgClass = computed(() => {
-  let className = props.className ? `icon-${props.className}` : '';
+  let className = props.className ? `iconsvg-${props.className}` : '';
   return ['svg-icon', className]
 });
 
 // svg name
-const iconName = computed(() => `#icon-${props.name}`);
+const iconName = computed(() => `#iconsvg-${props.name}`);
 </script>
 <style scoped>
 .svg-icon {
