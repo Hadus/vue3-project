@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="header">
+<script setup lang="ts" name="Header">
 
 </script>
 <style lang="less" scoped></style>

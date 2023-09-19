@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="<button></button>">
+<script setup lang="ts" name="Button">
 
 </script>
 <style lang="less" scoped></style>

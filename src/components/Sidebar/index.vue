@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="sidebar">
+<script setup lang="ts" name="Sidebar">
 
 </script>
 <style lang="less" scoped></style>

@@ -13,10 +13,10 @@
 		</div>
 	</div>
 </template>
-<script setup lang="ts">
+<script setup lang="ts" name="index">
 import { useSidebarStore } from '../store/sidebar';
-import vHeader from '@v/header/';
-import vSidebar from '@v/sidebar/';
+import vHeader from '@c/header/';
+import vSidebar from '@c/sidebar/';
 
 const sidebar = useSidebarStore();
 </script>
