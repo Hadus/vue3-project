@@ -4,17 +4,14 @@ import VueSetupExtend from 'vite-plugin-vue-setup-extend';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
-import requireTransform from 'vite-plugin-require-transform';
+import requireTransform from 'vite-plugin-require-transform'; // require
 import path from 'path';
 const resolve = (dir) => path.resolve(__dirname, dir);
 import legacy from '@vitejs/plugin-legacy'; // 处理打包module问题，可以file协议可以打开
 import copyPlugin from 'rollup-plugin-copy'; // 打包中文件复制
-// normalize css
-{/* <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css"/> */}
 
 // 打印环境变量
 export default defineConfig(({ command, mode }) => {
-	console.log(mode)
 	return {
 		base: './',
 		// publicDir: resolve('static'), //静态资源文件夹, 会全部复制
@@ -46,13 +43,10 @@ export default defineConfig(({ command, mode }) => {
 				resolvers: [ElementPlusResolver()]
 			}),
 			requireTransform({
-				fileRegex: /.js$|.vue$/
+				fileRegex: /.js$|.vue$|.ts$/
 			}),
 			legacy({ targets: ['defaults', 'not IE 11'] })
 		],
-		optimizeDeps: {
-			include: ['schart.js']
-		},
 		server: {
 			host: '0.0.0.0', // 配置host 才可以外网访问
 			port: 8080, // 访问80端口不需要加端口号

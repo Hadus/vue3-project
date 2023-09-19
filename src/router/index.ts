@@ -1,6 +1,9 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import { usePermissStore } from '../store/permiss';
 import index from '@v/index.vue';
+// 子路由
+import routes_home from './home';
+import routes_test from './test';
 
 // 主路由
 const indexRoutes = {
@@ -21,22 +24,12 @@ const indexRoutes = {
 };
 
 // 子路由
-// const routerContext = require('./index.ts');
-// console.log(routerContext)
-// routerContext.keys().forEach((route) => {
-//   console.log(route);
-//   // 如果是根目录的 index.js 、不处理
-//   if (route.startsWith('./index')) {
-//     return;
-//   }
-//   const routerModule = routerContext(route);
+indexRoutes.children = [
+  ...routes_home,
+  ...routes_test
+];
 
-//   // indexRoutes.children = [
-//   //   ...indexRoutes.children,
-//   //   ...(routerModule.default || routerModule)
-//   // ];
-// });
-
+console.log(indexRoutes);
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
