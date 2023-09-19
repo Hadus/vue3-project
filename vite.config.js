@@ -4,11 +4,11 @@ import VueSetupExtend from 'vite-plugin-vue-setup-extend';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
-import requireTransform from 'vite-plugin-require-transform'; // require
 import path from 'path';
 const resolve = (dir) => path.resolve(__dirname, dir);
 import legacy from '@vitejs/plugin-legacy'; // 处理打包module问题，可以file协议可以打开
 import copyPlugin from 'rollup-plugin-copy'; // 打包中文件复制
+import basicSsl from '@vitejs/plugin-basic-ssl'; // 自动生成https
 
 // 打印环境变量
 export default defineConfig(({ command, mode }) => {
@@ -42,9 +42,7 @@ export default defineConfig(({ command, mode }) => {
 			Components({
 				resolvers: [ElementPlusResolver()]
 			}),
-			requireTransform({
-				fileRegex: /.js$|.vue$|.ts$/
-			}),
+			// basicSsl(), // https
 			legacy({ targets: ['defaults', 'not IE 11'] })
 		],
 		server: {

@@ -7,6 +7,9 @@ import 'element-plus/dist/index.css';
 import '@a/css/index.less'
 import App from './App.vue';
 import router from './router';
+// svg
+import '@a/svg';
+
 import { usePermissStore } from './store/permiss';
 import * as dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn' // 导入本地化语言

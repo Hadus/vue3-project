@@ -4,7 +4,7 @@ export default [
     name: 'test',
     meta: {
       title: 'test',
-      permiss: '1',
+      permiss: '2',
     },
     component: () => import(/* webpackChunkName: "import" */ '@v/test/'),
   },

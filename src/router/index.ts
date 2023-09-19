@@ -10,26 +10,18 @@ const indexRoutes = {
   path: '/',
   name: 'index',
   component: index,
-  children: [
-    {
-      path: '/home',
-      name: 'home',
-      meta: {
-        title: 'home',
-        permiss: '1',
-      },
-      component: () => import(/* webpackChunkName: "home" */ '@v/home/'),
-    },
-  ],
+  children: [],
 };
 
 // 子路由
-indexRoutes.children = [
-  ...routes_home,
-  ...routes_test
-];
+const routeModules = import.meta.glob('./*/index.ts', {
+  eager: true,
+});
+Object.values(routeModules).forEach(module => {
+  const route = module.default;
+  indexRoutes.children = indexRoutes.children.concat(route);
+});
 
-console.log(indexRoutes);
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
