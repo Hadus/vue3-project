@@ -5,18 +5,15 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import 'element-plus/dist/index.css';
 // 引入 css
 import '@a/css/index.less'
-
 import App from './App.vue';
 import router from './router';
-// 打印环境信息
-// console.log(import.meta.env)
-
 import { usePermissStore } from './store/permiss';
-
 import * as dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn' // 导入本地化语言
-dayjs.locale('zh-cn') // 使用本地化语言
 
+dayjs.locale('zh-cn') // 使用本地化语言
+// 打印环境信息
+// console.log(import.meta.env)
 const app = createApp(App);
 app.use(createPinia());
 app.use(router);

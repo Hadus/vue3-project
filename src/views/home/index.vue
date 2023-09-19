@@ -5,7 +5,6 @@
 </template>
 
 <script setup lang="ts" name="home">
-
 </script>
 <style lang="less" scoped>
 .main-content {
