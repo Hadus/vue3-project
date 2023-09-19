@@ -3,11 +3,13 @@ import { createPinia } from 'pinia';
 // element plus
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import 'element-plus/dist/index.css';
+// 引入 css
+import '@a/css/index.less'
 
 import App from './App.vue';
 import router from './router';
 // 打印环境信息
-console.log(import.meta.env)
+// console.log(import.meta.env)
 
 import { usePermissStore } from './store/permiss';
 

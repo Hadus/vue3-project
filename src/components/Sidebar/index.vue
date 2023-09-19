@@ -9,10 +9,8 @@
 </script>
 <style lang="less" scoped>
 .sidebar-box {
-  width: 100px;
   height: 100%;
-  border-right: 1px solid #ccc;
-  background-color: skyblue;
+  .mixin-sidebar;
 }
 </style>
 <style lang="less"></style>

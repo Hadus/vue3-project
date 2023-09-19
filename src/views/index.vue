@@ -2,7 +2,7 @@
 	<v-header />
 	<div class="main-bot">
 		<v-sidebar />
-		<div class="main-content" :class="sidebar.hasSub ? 'has-sub' : ''">
+		<div class="main-content-box" :class="sidebar.hasSub ? 'has-sub' : ''">
 			<router-view v-slot="{ Component }">
 				<transition name="move" mode="out-in">
 					<keep-alive>
@@ -27,9 +27,9 @@ const sidebar = useSidebarStore();
 	height: 100%;
 }
 
-.main-content {
+.main-content-box {
 	flex: 1;
 	height: 100%;
-	background-color: peru;
+	overflow: hidden;
 }
 </style>

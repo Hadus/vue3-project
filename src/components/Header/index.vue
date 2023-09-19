@@ -2,7 +2,7 @@
   <div class="header-box">
     <div class="logo">
       <img src="@a/img/logo.png" alt="">
-      <span class="title">
+      <span class="title font14">
         首页
       </span>
     </div>
@@ -17,10 +17,9 @@
 <style lang="less" scoped>
 .header-box {
   width: 100%;
-  height: 60px;
-  background: #e5eaf8;
   display: flex;
   justify-content: space-between;
+  .mixin-header;
 
   >div {
     height: 100%;
@@ -38,9 +37,7 @@
       margin-right: 10px;
     }
 
-    >.title {
-      font-size: 14px;
-    }
+    >.title {}
   }
 
   >.center {

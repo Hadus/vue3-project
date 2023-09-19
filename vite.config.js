@@ -9,6 +9,9 @@ import path from 'path';
 const resolve = (dir) => path.resolve(__dirname, dir);
 import legacy from '@vitejs/plugin-legacy'; // 处理打包module问题，可以file协议可以打开
 import copyPlugin from 'rollup-plugin-copy'; // 打包中文件复制
+// normalize css
+{/* <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css"/> */}
+
 // 打印环境变量
 export default defineConfig(({ command, mode }) => {
 	console.log(mode)
@@ -29,7 +32,7 @@ export default defineConfig(({ command, mode }) => {
 				less: {
 					math: "always", // 括号内才使用数学计算
 					// 引入多个文件以；分割
-					// additionalData: '@import "@/assets/styles/vars.less";',
+					additionalData: '@import "@a/css/var.less";',
 				},
 			},
 		},
