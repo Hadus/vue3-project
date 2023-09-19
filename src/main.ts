@@ -11,12 +11,6 @@ import router from './router';
 import '@a/svg';
 
 import { usePermissStore } from './store/permiss';
-import * as dayjs from 'dayjs';
-import 'dayjs/locale/zh-cn' // 导入本地化语言
-
-dayjs.locale('zh-cn') // 使用本地化语言
-// 打印环境信息
-// console.log(import.meta.env)
 const app = createApp(App);
 app.use(createPinia());
 app.use(router);

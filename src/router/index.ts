@@ -1,10 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import { usePermissStore } from '@/store/permiss';
 import index from '@v/index.vue';
-// 子路由
-import routes_home from './home';
-import routes_test from './test';
-
 // 主路由
 const indexRoutes = {
   path: '/',

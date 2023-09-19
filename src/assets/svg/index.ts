@@ -2,8 +2,8 @@ const svgList = [];
 const svgModules = import.meta.glob('./*.svg', {
   eager: true,
 });
-Object.values(svgModules).forEach(module => {
-  const svgNames = module.default.split('/');
+Object.keys(svgModules).forEach(key => {
+  const svgNames = key.split('/');
   const reg = /([\w1-9A-Za-z-_]+)\.svg/;
   const result = reg.exec(svgNames[svgNames.length - 1]);
   if (result) {
