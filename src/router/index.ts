@@ -18,7 +18,7 @@ Object.values(routeModules).forEach(module => {
   indexRoutes.children = indexRoutes.children.concat(route);
 });
 
-const routes: RouteRecordRaw[] = [
+export const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/home',

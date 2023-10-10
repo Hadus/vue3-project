@@ -127,6 +127,7 @@ table {
 /* custom */
 a {
   text-decoration: none;
+  cursor: pointer;
   -webkit-backface-visibility: hidden;
 }
 

@@ -1,2 +1,1 @@
-export const sycmLink = '';
-export const dataScreenLink = 'http://www.market.m.taobao.com/';
+export const LINK_BAIDU = 'https://www.baidu.com';
