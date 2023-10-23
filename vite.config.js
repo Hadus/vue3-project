@@ -9,7 +9,6 @@ import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import legacy from '@vitejs/plugin-legacy'; // 处理打包module问题，可以file协议可以打开
 import basicSsl from '@vitejs/plugin-basic-ssl'; // 自动生成https
 const resolve = (dir) => path.resolve(__dirname, dir);
-// 打印环境变量
 export default defineConfig(({ command, mode }) => {
 	return {
 		base: './',
