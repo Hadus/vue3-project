@@ -4,6 +4,8 @@ const service: AxiosInstance = axios.create({
   timeout: 5000
 });
 
+service.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+// axios.defaults.headers=''
 service.interceptors.request.use(
   (config: AxiosRequestConfig) => {
     return config;

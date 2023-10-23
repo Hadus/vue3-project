@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content scoll">
+  <div class="main-content scroll">
     home
   </div>
 </template>
