@@ -1,8 +1,9 @@
 import request from './request';
 
-export const fetchData = () => {
+export const fetchAllData = (data: object = {}) => {
   return request({
-    url: './table.json',
-    method: 'get'
+    url: 'api/login',
+    method: 'post',
+    data: { test: 1 }
   });
 };

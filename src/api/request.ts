@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosError, AxiosResponse, AxiosRequestConfig } from 'axios';
 import { ElMessage } from 'element-plus';
 const service: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_APP_BASE_API as string, //VITE_BASE_API是在.env文件中定义的
+  baseURL: import.meta.env.VITE_BASE_URL, //VITE_BASE_API是在.env文件中定义的
   timeout: 5000
 });
 

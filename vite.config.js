@@ -8,6 +8,8 @@ import path from 'path';
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import legacy from '@vitejs/plugin-legacy'; // 处理打包module问题，可以file协议可以打开
 import basicSsl from '@vitejs/plugin-basic-ssl'; // 自动生成https
+import { viteMockServe } from 'vite-plugin-mock'; // mock
+
 const resolve = (dir) => path.resolve(__dirname, dir);
 export default defineConfig(({ command, mode }) => {
 	return {
@@ -48,7 +50,11 @@ export default defineConfig(({ command, mode }) => {
         symbolId: 'iconsvg-[dir]-[name]',
       }),
 			// basicSsl(), // https
-			legacy({ targets: ['defaults', 'not IE 11'] })
+			legacy({ targets: ['defaults', 'not IE 11'] }),
+			viteMockServe({
+				mockPath: "./src/mock/", // 指定mock目录
+				localEnabled: command === 'start' // 开发时应用
+			})
 		],
 		server: {
 			host: '0.0.0.0', // 配置host 才可以外网访问
