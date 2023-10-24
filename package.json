@@ -4,8 +4,10 @@
 	"private": true,
 	"scripts": {
 		"start": "vite --mode dev",
+		"uat": "vite --mode uat",
 		"prod": "vite --mode prod",
 		"build:dev": "vite build && node toFile.mjs --mode dev",
+		"build:uat": "vite build && node toFile.mjs --mode uat",
 		"build": "vite build && node toFile.mjs --mode prod",
 		"preview": "vite preview --mode prod"
 	},
