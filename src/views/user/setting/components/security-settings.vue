@@ -77,9 +77,7 @@
             </a-typography-paragraph>
           </div>
           <div class="operation">
-            <a-link @click="drawserVisible = true">
-              {{ $t('userSetting.SecuritySettings.button.update') }}
-            </a-link>
+            <a-link @click="toConfirm"> 二次确认 </a-link>
           </div>
         </template>
       </a-list-item-meta>
@@ -115,12 +113,21 @@
 
 <script lang="ts" setup>
   import { ref, h } from 'vue';
+  import { Tooltip } from '@arco-design/web-vue';
+  import cmSecConfirm from './cm-sec-confirm/cm-sec-confirm';
   import Drawer from './cm-drawer/drawer.vue';
-
-  const drawserVisible = ref(false);
 
   const nodeStr1 = `<span class="demo">v-html</span>`;
   const nodeStr2 = h('span', { class: 'demo' }, 'h方法');
+
+  const ModalContent = h('div', { class: 'modal-content' }, [
+    h(Tooltip, { content: 'tooltip content' }, () => h('span', '测试')),
+  ]);
+  const toConfirm = () => {
+    cmSecConfirm(ModalContent);
+  };
+
+  const drawserVisible = ref(false);
 </script>
 
 <style scoped lang="less">
