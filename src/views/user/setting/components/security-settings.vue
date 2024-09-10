@@ -79,7 +79,7 @@
             </a-typography-paragraph>
           </div>
           <div class="operation">
-            <a-link>
+            <a-link @click="drawserVisible = true">
               {{ $t('userSetting.SecuritySettings.button.update') }}
             </a-link>
           </div>
@@ -87,9 +87,19 @@
       </a-list-item-meta>
     </a-list-item>
   </a-list>
+  <Drawer
+    v-if="drawserVisible"
+    v-model:visible="drawserVisible"
+    drawer-type="add"
+  ></Drawer>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  import { ref } from 'vue';
+  import Drawer from './cm-drawer/drawer.vue';
+
+  const drawserVisible = ref(false);
+</script>
 
 <style scoped lang="less">
   :deep(.arco-list-item) {
