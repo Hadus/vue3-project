@@ -1,0 +1,46 @@
+// 一般设置和通用类
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'PingFang SC', "Helvetica Neue", Helvetica, "microsoft yahei", arial, STHeiTi, sans-serif;
+  background-color: #fff;
+  .mixin-body;
+}
+
+a {
+  color: skyblue;
+  color: @aColor;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll {
+  overflow-y: scroll;
+}
+
+.no-select {
+  user-select: none;
+}

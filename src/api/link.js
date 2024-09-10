@@ -1,0 +1,1 @@
+export const LINK_BAIDU = 'https://www.baidu.com';

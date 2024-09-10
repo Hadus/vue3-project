@@ -1,0 +1,37 @@
+// 通用变量
+@bgc: #fff; // 主要背景色
+@border: 1px solid #ccc;
+@aColor: skyblue;
+
+.mixin-body {
+  font-family: 'PingFang SC', "Helvetica Neue", Helvetica, "microsoft yahei", arial, STHeiTi, sans-serif;
+  background-color: @bgc;
+  font-size: 14px;
+}
+
+.mixin-header {
+  height: 60px;
+  background-color: #e5eaf8;
+}
+
+.mixin-sidebar {
+  width: 140px;
+  padding: 7px 0;
+  // background: skyblue;
+  // border-right: 1px solid #ccc;
+}
+
+// 块外盒子 
+.mixin-block(@p: 16px, @br: 10px) {
+  min-height: 40px;
+  padding: @p;
+  border-radius: @br;
+}
+
+.mixin-icon {
+  font-size: 16px;
+  color: #000;
+}
+
+// theme
+@mainBgc: #3074b3;
