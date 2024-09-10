@@ -68,6 +68,25 @@
     <a-list-item>
       <a-list-item-meta>
         <template #avatar>
+          <a-typography-paragraph> v-html </a-typography-paragraph>
+        </template>
+        <template #description>
+          <div class="content">
+            <a-typography-paragraph class="tip">
+              <span v-html="nodeStr1"></span>|||<span><nodeStr2 /></span>
+            </a-typography-paragraph>
+          </div>
+          <div class="operation">
+            <a-link @click="drawserVisible = true">
+              {{ $t('userSetting.SecuritySettings.button.update') }}
+            </a-link>
+          </div>
+        </template>
+      </a-list-item-meta>
+    </a-list-item>
+    <a-list-item>
+      <a-list-item-meta>
+        <template #avatar>
           <a-typography-paragraph>
             {{ $t('userSetting.SecuritySettings.form.label.email') }}
           </a-typography-paragraph>
@@ -95,13 +114,20 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref } from 'vue';
+  import { ref, h } from 'vue';
   import Drawer from './cm-drawer/drawer.vue';
 
   const drawserVisible = ref(false);
+
+  const nodeStr1 = `<span class="demo">v-html</span>`;
+  const nodeStr2 = h('span', { class: 'demo' }, 'h方法');
 </script>
 
 <style scoped lang="less">
+  .demo {
+    color: red;
+  }
+
   :deep(.arco-list-item) {
     border-bottom: none !important;
     .arco-typography {
