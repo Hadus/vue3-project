@@ -114,7 +114,7 @@
 <script lang="ts" setup>
   import { ref, h } from 'vue';
   import { Tooltip } from '@arco-design/web-vue';
-  import cmSecConfirm from './cm-sec-confirm/cm-sec-confirm';
+  import cmSecConfirm from './cm-sec-confirm-modal/cm-sec-confirm-modal';
   import Drawer from './cm-drawer/drawer.vue';
 
   const nodeStr1 = `<span class="demo">v-html</span>`;

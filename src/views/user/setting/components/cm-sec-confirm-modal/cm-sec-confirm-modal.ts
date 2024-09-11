@@ -1,6 +1,7 @@
 import { h, VNode } from 'vue';
 import { Modal } from '@arco-design/web-vue';
 import { IconExclamationCircle } from '@arco-design/web-vue/es/icon';
+import type { CmSecConfirmModalType } from './type';
 import './index.less';
 
 export default ({
@@ -11,16 +12,7 @@ export default ({
   okText = '确认',
   cancelText = '取消',
   width = '360',
-}: {
-  // confirm 和 warning一样，但多一个取消按钮
-  type?: 'confirm' | 'info' | 'success' | 'warning' | 'error';
-  ModalContent: VNode;
-  onOk: () => void;
-  onCancel?: () => void;
-  okText?: string;
-  cancelText?: string;
-  width?: number | string;
-}) => {
+}: CmSecConfirmModalType) => {
   return Modal[type]({
     modalClass: 'cm-sec-confirm',
     title: () => h('div', [h(IconExclamationCircle), ModalContent]),
