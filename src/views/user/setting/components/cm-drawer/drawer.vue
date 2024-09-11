@@ -64,13 +64,16 @@
   };
   let propsPicList: string[] = [];
 
+  // 图片上传
   const handleUploadPic = async () => {
     console.log(propsPicList[propsPicList.length - 1]);
   };
 
+  // 图片删除
   const handleDeletePic = async () => {
     console.log(propsPicList[0]);
   };
+
   const handleOk = (cb: (isOk?: boolean) => void) => {
     setTimeout(() => {
       if (props.drawerType === 'edit' && propsPicList.length === 2) {
