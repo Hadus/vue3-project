@@ -1,0 +1,48 @@
+.cm-sec-confirm {
+  padding: 20px 16px;
+  .arco-modal-header {
+    margin-bottom: 40px;
+
+    svg.arco-icon-exclamation-circle-fill {
+      font-size: 22px;
+      color: rgb(var(--danger-6));
+      display: none;
+    }
+    .arco-modal-title {
+      font-size: 14px;
+      > div {
+        display: flex;
+        justify-content: start;
+        svg {
+          font-size: 32px;
+          color: rgb(var(--danger-6));
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  .arco-modal-body {
+    display: none;
+  }
+  .arco-modal-footer {
+    text-align: right;
+    .arco-btn-status-danger {
+      background-color: rgb(var(--danger-6));
+    }
+  }
+  .cm-highlight {
+    color: rgb(var(--primary-6));
+    margin: 0 5px;
+  }
+}
+.cm-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  min-width: 40px;
+}
+p {
+  padding: 0;
+  margin: 0;
+}

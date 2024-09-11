@@ -119,12 +119,36 @@
 
   const nodeStr1 = `<span class="demo">v-html</span>`;
   const nodeStr2 = h('span', { class: 'demo' }, 'h方法');
+  // 字符串超长隐藏
+  const replaceChange = (str) => {
+    const strshow = str.replace(/,/g, '/');
+    if (strshow.length > 11) {
+      return `${strshow.slice(0, 11)}...`;
+    }
+    return strshow;
+  };
 
-  const ModalContent = h('div', { class: 'modal-content' }, [
-    h(Tooltip, { content: 'tooltip content' }, () => h('span', '测试')),
+  const dep = replaceChange('广州省/深圳市/南山区/福田区/宝安区/福田区/');
+  const ModalContent = h('p', [
+    '确定转移',
+    h(Tooltip, { content: 'tooltip content' }, () =>
+      h('span', { class: 'cm-highlight' }, dep)
+    ),
+    '下所有人员到',
+    h(Tooltip, { content: dep }, () =>
+      h('span', { class: 'cm-highlight' }, dep)
+    ),
+    '下吗？',
   ]);
+
   const toConfirm = () => {
-    cmSecConfirm(ModalContent);
+    cmSecConfirm({
+      type: 'confirm',
+      ModalContent,
+      onOk: () => {
+        console.log(111);
+      },
+    });
   };
 
   const drawserVisible = ref(false);
