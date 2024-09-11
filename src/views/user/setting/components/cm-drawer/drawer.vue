@@ -40,6 +40,7 @@
   import { FileItem } from '@arco-design/web-vue/es/upload/interfaces';
   import cmDrawer from './cm-drawer.vue';
   import type { DrawerType } from './type';
+  import { rules } from './rules';
 
   import cmUploadPic from '../cm-upload-pic/cm-upload-pic.vue';
 
@@ -50,18 +51,7 @@
   const form = ref({
     username: '123',
   });
-
-  const rules = {
-    username: [
-      { required: true, message: '请输入用户名', trigger: 'blur' },
-      {
-        min: 3,
-        max: 10,
-        message: '用户名长度在 3 到 10 个字符',
-        trigger: 'blur',
-      },
-    ],
-  };
+  const drawerForm = ref(null);
   let propsPicList: string[] = [];
 
   // 图片上传
@@ -75,13 +65,23 @@
   };
 
   const handleOk = (cb: (isOk?: boolean) => void) => {
-    setTimeout(() => {
-      if (props.drawerType === 'edit' && propsPicList.length === 2) {
-        handleDeletePic();
+    drawerForm.value.validate((errors) => {
+      if (errors) {
+        console.log('error', errors);
+        cb(false);
+        return;
       }
-      handleUploadPic();
-      cb(true);
-    }, 1000);
+      console.log('ok');
+
+      setTimeout(() => {
+        if (props.drawerType === 'edit' && propsPicList.length === 2) {
+          handleDeletePic();
+        }
+        handleUploadPic();
+        cb(true);
+        console.log('ok', form.value);
+      }, 1000);
+    });
   };
 
   // 图片上传
