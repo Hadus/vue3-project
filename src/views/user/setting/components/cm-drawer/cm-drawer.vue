@@ -46,7 +46,7 @@
 
 <script lang="ts" setup>
   import { computed, ref } from 'vue';
-  import { DrawerPropsType } from './type.d';
+  import { DrawerPropsType } from './type';
 
   const emit = defineEmits(['update:visible', 'handleOk']);
   const props = withDefaults(defineProps<DrawerPropsType>(), {

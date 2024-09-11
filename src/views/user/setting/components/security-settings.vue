@@ -77,7 +77,7 @@
             </a-typography-paragraph>
           </div>
           <div class="operation">
-            <a-link @click="toConfirm"> 二次确认 </a-link>
+            <a-link status="danger" @click="toConfirm"> 二次确认 </a-link>
           </div>
         </template>
       </a-list-item-meta>
@@ -96,8 +96,8 @@
             </a-typography-paragraph>
           </div>
           <div class="operation">
-            <a-link @click="drawserVisible = true">
-              {{ $t('userSetting.SecuritySettings.button.update') }}
+            <a-link status="danger" @click="drawserVisible = true">
+              打开抽屉
             </a-link>
           </div>
         </template>
