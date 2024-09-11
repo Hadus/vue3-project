@@ -4,7 +4,7 @@ type MoreBtnsType = {
   type?: 'primary';
   status?: 'normal' | 'warning' | 'success' | 'danger';
   icon?: string;
-  onClick?: (d: () => void) => void;
+  onClick?: (cb: (isOk?: boolean) => void) => void;
 };
 
 export type DrawerPropsType = {

@@ -25,6 +25,7 @@
           :key="index"
           :type="btn.type"
           :status="btn.status"
+          :loading="drawerOkLoading"
           @click="btn.onClick && btn.onClick(okCB)"
           >{{ btn.text }}</a-button
         >
@@ -61,9 +62,12 @@
   const drawerOkLoading = ref(false);
 
   // 确定之后的回调函数
-  const okCB = () => {
+  const okCB = (isOk?: boolean) => {
     drawerOkLoading.value = false;
-    emit('update:visible', false);
+    console.log('---', isOk);
+    if (isOk) {
+      emit('update:visible', false);
+    }
   };
 
   const handleOk = async () => {

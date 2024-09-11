@@ -55,9 +55,9 @@
       },
     ],
   };
-  const handleOk = (cb: () => void) => {
+  const handleOk = (cb: (isOk?: boolean) => void) => {
     setTimeout(() => {
-      cb();
+      cb(true);
     }, 1000);
   };
 </script>
