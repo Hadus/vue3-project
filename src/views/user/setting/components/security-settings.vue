@@ -73,7 +73,11 @@
         <template #description>
           <div class="content">
             <a-typography-paragraph class="tip">
-              <span v-html="nodeStr1"></span>|||<span><nodeStr2 /></span>
+              ---
+              <span v-html="nodeStr1"></span>
+              |||
+              <nodeStr2 />
+              ---
             </a-typography-paragraph>
           </div>
           <div class="operation">
