@@ -2,7 +2,7 @@
   <a-drawer
     :title="props.title"
     :width="props.width"
-    :visible="visible"
+    :visible="props.visible"
     :closable="true"
     :mask-closable="true"
     unmount-on-close
@@ -58,7 +58,6 @@
     cancelText: '取消',
   });
 
-  const visible = computed(() => props.visible);
   const drawerOkLoading = ref(false);
 
   // 确定之后的回调函数
